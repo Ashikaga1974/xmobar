@@ -10,19 +10,21 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
        , iconOffset = -1
        , lowerOnStart = True
        , pickBroadest = False
-       , persistent = False
+       , persistent = True
        , hideOnStart = False
-       , iconRoot = "."
+       , iconRoot = "/home/saschalerschen/.xmonad/xpm/" --default: "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run Cpu ["-L","3","-H","50",
+       , commands = [ 
+                      Run Cpu ["-L","3","-H","50",
                                "--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
                     , Run StdinReader
-                    , Run Date "<icon=calendar-clock-icon_24.xpm/> %a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run UnsafeStdinReader
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "<action='alacritty'><fc=#81A9DB>TER</fc></action> | <action='brave-browser'><fc=#81A9DB>BR</fc></action> | %StdinReader%}{%cpu% | %memory% * %swap% <fc=#81A9DB>%date%</fc>"
+       , template = "<action='alacritty'><fc=#81A9DB>TER</fc></action> | <action='brave-browser'><fc=#81A9DB>BR</fc></action> | %UnsafeStdinReader%}{<icon=cpu.xbm/>%cpu% | <icon=mem.xbm/>%memory% * <icon=dish.xbm/>%swap% <fc=#81A9DB>%date%</fc>"
        }
