@@ -26,7 +26,7 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
                                "--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
-                    , Run Com "sh" ["-c","~/Dokumente/GitHub/checkupdatesshort.sh"] "up" 1
+                    , Run Com "sh" ["-c","~/Dokumente/GitHub/checkupdatesshort.sh"] "up" 3600
                     , Run Com "echo" ["huhu"] "huhu" 10                    
                     , Run StdinReader
                     , Run UnsafeStdinReader
