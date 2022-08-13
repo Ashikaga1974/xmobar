@@ -1,5 +1,5 @@
 Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
-       , additionalFonts = []
+       , additionalFonts = ["xft:FontAwesome:pixelsize=14"]
        , borderColor = "black"
        , border = TopB
        , bgColor = "black"
@@ -16,15 +16,23 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
        , allDesktops = True
        , overrideRedirect = True
        , commands = [ 
-                      Run Cpu ["-L","3","-H","50",
+                     Run Com "echo" ["<fn=1>\xf003</fn>"] "mail" 3600
+                     ,Run Com "echo" ["<fn=1>\xf120</fn>"] "terminal" 3600   
+                     ,Run Com "echo" ["<fn=1>\xf268</fn>"] "Browser" 3600                        
+                     ,Run Com "echo" ["<fn=1>\xf121</fn>"] "Code" 3600                        
+                     ,Run Com "echo" ["<fn=1>\xf05a</fn>"] "Info" 3600                        
+                     ,Run Com "echo" ["<fn=1>\xf017</fn>"] "Clock" 3600                        
+                     ,Run Cpu ["-L","3","-H","50",
                                "--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
+                    , Run Com "sh" ["-c","~/Dokumente/GitHub/checkupdatesshort.sh"] "up" 1
+                    , Run Com "echo" ["huhu"] "huhu" 10                    
                     , Run StdinReader
                     , Run UnsafeStdinReader
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "<action='alacritty'><fc=#81A9DB>TER</fc></action> | <action='brave-browser'><fc=#81A9DB>BR</fc></action> | %UnsafeStdinReader%}{<icon=cpu.xbm/>%cpu% | <icon=mem.xbm/>%memory% * <icon=dish.xbm/>%swap% <fc=#81A9DB>%date%</fc>"
+       , template = "<action='thunderbird'>%mail%</action> | <action='alacritty'>%terminal%</action> | <action='brave-browser'>%Browser%</action> | <action='brave-browser'>%Code%</action> | %UnsafeStdinReader%}{<icon=cpu.xbm/>%cpu% | <icon=mem.xbm/>%memory% | <icon=dish.xbm/>%swap% | %Info% <fc=#D54E53>%up%</fc> | %Clock% <fc=#81A9DB>%date%</fc>"
        }
