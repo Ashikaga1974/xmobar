@@ -17,7 +17,6 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
        , overrideRedirect = True
        , commands = [ 
                      Run Com "echo" ["<fn=1>\xf003</fn>"] "mail" 3600
-                    -- Run Volume "default" "Master" [] 10                        
                      , Run Com "echo" ["<fn=1>\xf120</fn>"] "terminal" 3600   
                      , Run Com "echo" ["<fn=1>\xf268</fn>"] "Browser" 3600                        
                      , Run Com "echo" ["<fn=1>\xf121</fn>"] "Code" 3600                        
