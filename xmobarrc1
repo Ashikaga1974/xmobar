@@ -15,9 +15,9 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
        , iconRoot = "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run StdinReader
+       , commands = [ Run UnsafeStdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%"
+       , template = "%UnsafeStdinReader%"
        }

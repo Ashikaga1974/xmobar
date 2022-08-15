@@ -17,6 +17,7 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
        , overrideRedirect = True
        , commands = [ 
                      Run Com "echo" ["<fn=1>\xf003</fn>"] "mail" 3600
+                    -- Run Volume "default" "Master" [] 10                        
                      , Run Com "echo" ["<fn=1>\xf120</fn>"] "terminal" 3600   
                      , Run Com "echo" ["<fn=1>\xf268</fn>"] "Browser" 3600                        
                      , Run Com "echo" ["<fn=1>\xf121</fn>"] "Code" 3600                        
@@ -31,11 +32,11 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
                                           "-L", "60", "-H", "80",
                                           "-l", "green", "-n", "yellow", "-h", "red",
                                           "--", "--mintemp", "20", "--maxtemp", "100"] 50                                               
-                    , Run Memory ["-t","<usedratio>%"] 10
-                    , Run Com "sh" ["-c","~/Dokumente/GitHub/checkupdatesshort.sh"] "up" 3600
-                    , Run StdinReader
-                    , Run UnsafeStdinReader
-                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                     , Run Memory ["-t","<usedratio>%"] 10
+                     , Run Com "sh" ["-c","~/Dokumente/GitHub/checkupdatesshort.sh"] "up" 3600
+                     , Run StdinReader
+                     , Run UnsafeStdinReader
+                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
