@@ -26,6 +26,7 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
                      , Run Com "echo" ["<fn=1>\xf080</fn>"] "Mem" 3600    
                      , Run Com "echo" ["<fn=1>\xf2db</fn>"] "Chip" 3600                                                                  
                      , Run Com "echo" ["<fn=1>\xf2c7</fn>"] "Temp" 3600                                                                                       
+                     , Run Com "echo" ["<fn=1>\xf028</fn>"] "Vol" 3600                                                                                              
                      , Run Cpu ["-t", "<total>%","-L","3","-H","50",
                                "--normal","green","--high","red"] 10
                      , Run MultiCoreTemp ["-t", "<avg>°C | <avgpc>%",
@@ -34,11 +35,12 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
                                           "--", "--mintemp", "20", "--maxtemp", "100"] 50                                               
                      , Run Memory ["-t","<usedratio>%"] 10
                      , Run Com "sh" ["-c","~/Dokumente/GitHub/checkupdatesshort.sh"] "up" 3600
+                     , Run Com "sh" ["-c","~/Dokumente/GitHub/volume.sh"] "vol" 10
                      , Run StdinReader
                      , Run UnsafeStdinReader
                      , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "<action='thunderbird'>%mail%</action> | <action='alacritty'>%terminal%</action> | <action='brave-browser'>%Browser%</action> | <action='code'>%Code%</action> | %UnsafeStdinReader%}{%Chip% %cpu% | %Temp% %multicoretemp% | %Mem% %memory% | %Info% <fc=#D54E53>%up%</fc> | %Clock% <fc=#81A9DB>%date%</fc>"
+       , template = "<action='thunderbird'>%mail%</action> | <action='alacritty'>%terminal%</action> | <action='brave-browser'>%Browser%</action> | <action='code'>%Code%</action> | %UnsafeStdinReader%}{%Chip% %cpu% | %Temp% %multicoretemp% | %Mem% %memory% | %Vol%%vol% | %Info% <fc=#D54E53>%up%</fc> | %Clock% <fc=#81A9DB>%date%</fc>"
        }
