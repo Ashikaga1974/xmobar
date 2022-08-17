@@ -25,7 +25,9 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
                      , Run Com "echo" ["<fn=1>\xf080</fn>"] "Mem" 3600    
                      , Run Com "echo" ["<fn=1>\xf2db</fn>"] "Chip" 3600                                                                  
                      , Run Com "echo" ["<fn=1>\xf2c7</fn>"] "Temp" 3600                                                                                       
-                     , Run Com "echo" ["<fn=1>\xf028</fn>"] "Vol" 3600                                                                                              
+                     , Run Com "echo" ["<fn=1>\xf028</fn>"] "Vol" 3600        
+                     , Run Com "echo" ["<fn=1>\xf011</fn>"] "Suspend" 3600                             
+
                      , Run Cpu ["-t", "<total>%","-L","3","-H","50",
                                "--normal","green","--high","red"] 10
                      , Run MultiCoreTemp ["-t", "<avg>°C | <avgpc>%",
@@ -41,5 +43,5 @@ Config { font = "xft:Source Code Pro:pixelsize=14:antialias=true:"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "<action='thunderbird'>%mail%</action> | <action='alacritty'>%terminal%</action> | <action='brave-browser'>%Browser%</action> | <action='code'>%Code%</action> | %UnsafeStdinReader%}{%Chip% %cpu% | %Temp% %multicoretemp% | %Mem% %memory% | %Vol%%vol% | %Info% <fc=#D54E53>%up%</fc> | %Clock% <fc=#81A9DB>%date%</fc>"
+       , template = "<action='thunderbird'>%mail%</action> | <action='alacritty'>%terminal%</action> | <action='brave-browser'>%Browser%</action> | <action='code'>%Code%</action> | %UnsafeStdinReader%}{%Chip% %cpu% | %Temp% %multicoretemp% | %Mem% %memory% | %Vol%%vol% | %Info% <fc=#D54E53>%up%</fc> | %Clock% <fc=#81A9DB>%date%</fc> <action='/home/saschalerschen/Dokumente/GitHub/suspend.sh'><fc=#D54E53>%Suspend%</fc></action>"
        }
